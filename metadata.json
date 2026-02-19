@@ -1,0 +1,5 @@
+{
+  "name": "SalaryPro Calculator",
+  "description": "A professional employee salary calculation system with real-time tracking, 15-day summary, and multilingual support (English & Arabic).",
+  "requestFramePermissions": []
+}
