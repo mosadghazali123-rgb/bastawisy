@@ -1,34 +1,136 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SalaryPro Calculator</title>
+    <title>البسطويسي للسجاد اليدوي | El Bastawisy Carpets</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Inter', 'Noto Sans Arabic', sans-serif;
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              amiri: ['Amiri', 'serif'],
+              noto: ['Noto Kufi Arabic', 'sans-serif'],
+            }
+          }
+        }
       }
-      [dir="rtl"] {
-        font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Kufi+Arabic:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --caramel-gold: #D4AF37;
+        --persian-red: #8B0000;
+        --cream: #F5F5DC;
+        --float-side: right; /* تغيير الاتجاه بسهولة من هنا: right أو left */
+      }
+      body {
+        font-family: 'Noto Kufi Arabic', sans-serif;
+        background-color: var(--cream);
+        transition: background-color 0.3s ease;
+      }
+      .dark body {
+        background-color: #111827; /* gray-900 */
+      }
+      .rtl { direction: rtl; }
+      .ltr { direction: ltr; }
+      
+      .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Hide number input spinners (arrows) for a manual typing feel */
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input[type=number] {
+        -moz-appearance: textfield;
+      }
+
+      /* Floating Social Styles */
+      .floating-social-container {
+        position: fixed;
+        top: 150px;
+        z-index: 60;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 10px;
+        transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      
+      .side-right { right: 20px; }
+      .side-left { left: 20px; }
+
+      .social-btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #111827;
+        color: white;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+      }
+
+      .social-btn:hover {
+        transform: scale(1.15) rotate(5deg);
+        border-color: var(--caramel-gold);
+        box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+      }
+
+      .social-btn.whatsapp { background: #25D366; }
+      .social-btn.facebook { background: #1877F2; }
+      .social-btn.instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+      .social-btn.tiktok { background: #000000; }
+
+      @media (max-width: 768px) {
+        .floating-social-container {
+          top: auto;
+          bottom: 30px;
+          flex-direction: row;
+          left: 50%;
+          right: auto;
+          transform: translateX(-50%);
+          background: rgba(255,255,255,0.1);
+          backdrop-filter: blur(10px);
+          padding: 15px 25px;
+          border-radius: 50px;
+          border: 1px solid rgba(212, 175, 55, 0.3);
+        }
       }
     </style>
 
-<link rel="stylesheet" href="/index.css">
-  <script type="importmap">
+  <link rel="stylesheet" href="/index.css">
+    <script type="importmap">
 {
   "imports": {
+    "react": "https://esm.sh/react@19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@19.2.4/",
+    "lucide-react": "https://esm.sh/lucide-react@0.574.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@7.13.0",
     "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0"
   }
 }
 </script>
-  <script type="module" crossorigin src="/assets/index-F2Z1sYsw.js"></script>
+  <script type="module" crossorigin src="/assets/index-lzlSywhJ.js"></script>
 </head>
-  <body class="bg-gray-50 text-gray-900 transition-colors duration-300">
+  <body>
     <div id="root"></div>
-</body>
+  </body>
 </html>
